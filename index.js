@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
 const app = express()
 
@@ -25,7 +25,7 @@ async function run() {
         const taskCollection = client.db("etask").collection("task");
 
         app.get('/task', async (req, res) => {
-            const query = {}
+            const query = { completed: false }
             const result = await taskCollection.find(query).toArray();
             res.send(result)
         })
@@ -36,6 +36,30 @@ async function run() {
             const result = await taskCollection.insertOne(query)
             res.send(result)
         })
+
+        app.get('/completedtask', async (req, res) => {
+            const query = { completed: true }
+            const result = await taskCollection.find(query).toArray();
+            res.send(result)
+        })
+
+
+
+        app.patch('/task/:id', async (req, res) => {
+
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const updateDoc = {
+                $set: {
+                    completed: true,
+                }
+            }
+
+            const updateTask = await taskCollection.updateOne(filter, updateDoc);
+            res.send(updateDoc);
+
+        })
+
 
     }
 
