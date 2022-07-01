@@ -45,6 +45,7 @@ async function run() {
             res.send(result)
         })
 
+        // API to get specific task
         app.get('/task/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) }
@@ -52,6 +53,7 @@ async function run() {
             res.send(result)
         })
 
+        // API for update pending task
         app.put('/updatedTask/:id', async (req, res) => {
             const id = req.params.id;
             const updateTask = req.body;
@@ -70,6 +72,7 @@ async function run() {
 
         })
 
+        // API for update pending task to completed task
         app.patch('/task/:id', async (req, res) => {
             const id = req.params.id;
             const filter = { _id: ObjectId(id) };
