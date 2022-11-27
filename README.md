@@ -1,8 +1,11 @@
-# eTask (Task management tool web app)
+# eTask-Server
+This is mainly the server side repository of [eTask](https://etask-manager.netlify.app/) (Task management tool web app).
 
-# [eTask](https://etask-manager.netlify.app/)
+## Live Website Link
+[https://etask-manager.netlify.app/](https://etask-manager.netlify.app/)
 
-## Live Website Link [https://etask-manager.netlify.app/](https://etask-manager.netlify.app/)
+## Live Server Link
+[https://nameless-garden-92421.herokuapp.com](https://nameless-garden-92421.herokuapp.com)
 
 ### Website's features and functionalities
 - eTask is mainly task management tool web app.
