@@ -7,7 +7,7 @@ This is mainly the server side repository of [eTask](https://etask-manager.netli
 ## Live Server Link
 [https://nameless-garden-92421.herokuapp.com](https://nameless-garden-92421.herokuapp.com)
 
-### Website's features and functionalities
+## Website's features and functionalities
 - eTask is mainly task management tool web app.
 - Users can add the daily tasks.
 - Users can edit the tasks in the To-Do list section.
